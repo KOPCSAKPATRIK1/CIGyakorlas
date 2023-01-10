@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Macskak</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <center>
+    <form method="get" >
+      <input type="text" name="szemszin" id="szemszin">
+      <input type="submit" name="kereses" id="kereses" value="Keresés">
+    </form>
+  </center> 
+
+  <table>
+    <tr>
+      <th>Súly</th>
+      <th>Szem Szín</th>
+    </tr>
+      <% for (let m of macskak) {%> 
+        <tr>
+          <td><%= m.suly %></td>
+          <td><%= m.szem_szin %></td>
+        </tr>
+      <% } %> 
+  </table>
+  <center>
+    <form action="/macskak/new" method="get">
+      <input type="submit" value="Macska Hozzáadás">
+    </form>
+  </center>
+
+
+</body>
+</html>
